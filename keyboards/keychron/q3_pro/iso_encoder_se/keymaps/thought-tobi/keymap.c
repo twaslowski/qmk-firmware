@@ -24,6 +24,20 @@ enum layers{
   WIN_FN,
 };
 
+// Tap Dance declarations
+enum {
+    TD_UNDO_REDO,
+    TD_TEST
+};
+
+// Tap Dance definitions
+tap_dance_action_t tap_dance_actions[] = {
+    // Tap once for Escape, twice for Caps Lock
+    [TD_UNDO_REDO] = ACTION_TAP_DANCE_DOUBLE(LCMD(KC_Y), LCMD(LSFT(KC_Y))),
+    [TD_TEST] = ACTION_TAP_DANCE_DOUBLE(KC_X, KC_Y),
+};
+
+// macro declarations
 enum custom_keycodes {
     INTELLIJ_OPEN_RECENT = SAFE_RANGE,
     INTELLIJ_SWITCH_PROJECT_TAB_TAB,
@@ -32,6 +46,7 @@ enum custom_keycodes {
     GIT_DIFF_REVISION,
 };
 
+// macro definitions
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
     case INTELLIJ_OPEN_RECENT:
@@ -65,7 +80,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         _______,  KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_LBRC,  KC_RBRC,              KC_DEL,   KC_END,   KC_PGDN,
         _______,  MO(INTELLIJ),  KC_A,     KC_S,     KC_D,     KC_F,     KC_G,     KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  KC_QUOT,  KC_NUHS,    KC_ENT,
         _______,  KC_LSFT,  KC_NUBS,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,              KC_RSFT,            KC_UP,
-        _______,  KC_LCTL,  KC_LOPT,  KC_LCMD,                                KC_SPC,                                 LCMD(KC_Y),  KC_ROPT,  MO(INTELLIJ), KC_RCTL,  KC_LEFT,  KC_DOWN,  KC_RGHT),
+        _______,  KC_LCTL,  KC_LOPT,  KC_LCMD,                                KC_SPC,                                 TD(TD_UNDO_REDO),  KC_ROPT,  MO(INTELLIJ), KC_RCTL,  KC_LEFT,  KC_DOWN,  KC_RGHT),
 
     [INTELLIJ] = LAYOUT_93_iso(
         RGB_TOG,  _______,            KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    LSFT(KC_F6),    KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,     KC_F12,   _______,  _______,  RGB_TOG,

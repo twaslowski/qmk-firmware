@@ -16,6 +16,11 @@
 
 #pragma once
 
+/* tap dance */
+#define TAPPING_TERM 175
+#define TAPPING_TERM_PER_KEY
+
+
 /* turn off effects when suspended */
 #define RGB_DISABLE_WHEN_USB_SUSPENDED
 

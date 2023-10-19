@@ -15,6 +15,8 @@
  */
 
 #include QMK_KEYBOARD_H
+#include <macros.h>
+#include <tapdance.h>
 
 // clang-format off
 enum layers{
@@ -22,63 +24,6 @@ enum layers{
   INTELLIJ,
   WIN_BASE,
   WIN_FN,
-};
-
-// Tap Dance declarations
-enum {
-    TD_UNDO_REDO,
-    TD_COPY_PASTE,
-    TD_OPEN_TERMINAL,
-};
-
-// Tap Dance definitions
-tap_dance_action_t tap_dance_actions[] = {
-    // Tap once for Escape, twice for Caps Lock
-    [TD_UNDO_REDO] = ACTION_TAP_DANCE_DOUBLE(LCMD(KC_Y), LCMD(LSFT(KC_Y))),
-    [TD_COPY_PASTE] = ACTION_TAP_DANCE_DOUBLE(LCMD(KC_C), LCMD(KC_V)),
-    [TD_OPEN_TERMINAL] = ACTION_TAP_DANCE_DOUBLE(LALT(KC_F12), LCMD(LALT(LSFT(LCTL(KC_T))))),
-};
-
-// macro declarations
-enum custom_keycodes {
-    INTELLIJ_OPEN_RECENT = SAFE_RANGE,
-    INTELLIJ_SWITCH_PROJECT_TAB_TAB,
-    INTELLIJ_CLOSE_PROJECT_WINDOW,
-    GIT_DIFF_BRANCH,
-    GIT_DIFF_REVISION,
-    GIT_OPEN_REMOTE,
-};
-
-// macro definitions
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-    case INTELLIJ_OPEN_RECENT:
-        if (record -> event.pressed) {
-            SEND_STRING(SS_LCTL(SS_LCMD(SS_LALT(SS_LSFT(SS_TAP(X_I))))) SS_DELAY(10) SS_TAP(X_R));
-            break;
-        }
-    case INTELLIJ_CLOSE_PROJECT_WINDOW:
-        if (record -> event.pressed) {
-            SEND_STRING(SS_LCMD(SS_LALT(SS_LSFT(SS_TAP(X_W)))));
-            break;
-        }
-    case GIT_DIFF_BRANCH:
-        if (record -> event.pressed) {
-            SEND_STRING(SS_LCTL(SS_LCMD(SS_LALT(SS_LSFT(SS_TAP(X_G))))) SS_TAP(X_C));
-            break;
-        }
-    case GIT_DIFF_REVISION:
-        if (record -> event.pressed) {
-            SEND_STRING(SS_LCTL(SS_LCMD(SS_LALT(SS_LSFT(SS_TAP(X_G))))) SS_TAP(X_V));
-            break;
-        }
-    case GIT_OPEN_REMOTE:
-        if (record -> event.pressed) {
-            SEND_STRING(SS_LALT(SS_TAP(X_F12)) SS_DELAY(100) "gitopen" SS_TAP(X_ENTER));
-            break;
-        }
-    }
-    return true;
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {

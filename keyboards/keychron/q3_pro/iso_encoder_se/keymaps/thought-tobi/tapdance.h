@@ -29,6 +29,5 @@ tap_dance_action_t tap_dance_actions[] = {
     // Tap once for Escape, twice for Caps Lock
     [TD_UNDO_REDO] = ACTION_TAP_DANCE_DOUBLE(LCMD(KC_Y), LCMD(LSFT(KC_Y))),
     [TD_COPY_PASTE] = ACTION_TAP_DANCE_DOUBLE(LCMD(KC_C), LCMD(KC_V)),
-    [TD_OPEN_TERMINAL] = ACTION_TAP_DANCE_DOUBLE(LALT(KC_F12), INTELLIJ_OPEN_ITERM),
     [TD_BRACKETS] = ACTION_TAP_DANCE_FN(dance_brackets),
 };

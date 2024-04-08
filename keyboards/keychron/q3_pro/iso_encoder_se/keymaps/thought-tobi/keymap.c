@@ -30,18 +30,18 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [MAC_BASE] = LAYOUT_93_iso(
         KC_MUTE,  KC_ESC,             KC_BRID,  KC_BRIU,  KC_MCTL,  KC_LPAD,  RGB_VAD,  RGB_VAI,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE,  KC_VOLD,    KC_VOLU,  KC_SNAP,  KC_SIRI,  RGB_MOD,
                   KC_GRV,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,  KC_EQL,     KC_BSPC,  KC_INS,   KC_HOME,  KC_PGUP,
-        GIT_OPEN_REMOTE,  KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_LBRC,  KC_RBRC,              KC_DEL,   KC_END,   KC_PGDN,
+        _______,  KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_LBRC,  KC_RBRC,              KC_DEL,   KC_END,   KC_PGDN,
         _______,  MO(INTELLIJ),  KC_A,     KC_S,     KC_D,     KC_F,     KC_G,     KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  KC_QUOT,  KC_NUHS,    KC_ENT,
         _______,  KC_LSFT,  KC_NUBS,  KC_Z,     KC_X,     KC_C,     KC_V,     KC_B,     KC_N,     KC_M,     KC_COMM,  KC_DOT,   KC_SLSH,              KC_RSFT,            KC_UP,
-        _______,  KC_LCTL,  KC_LOPT,  KC_LCMD,                                KC_SPC,                                 TD(TD_UNDO_REDO),  TD(TD_COPY_PASTE),  MO(INTELLIJ), KC_RCTL,  KC_LEFT,  KC_DOWN,  KC_RGHT),
+        _______,  KC_LCTL,  KC_LOPT,  KC_LCMD,                                KC_SPC,                                 KC_RCMD,  KC_ROPT, MO(INTELLIJ), KC_RCTL,  KC_LEFT,  KC_DOWN,  KC_RGHT),
 
     [INTELLIJ] = LAYOUT_93_iso(
         RGB_TOG,  _______,            KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    LSFT(KC_F6),    KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,     KC_F12,   _______,  _______,  _______,
                   _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,    _______,  _______,  _______,  _______,
-        _______,  LCMD(LALT(KC_TAB)),  _______,  INTELLIJ_CLOSE_PROJECT_WINDOW, _______,  INTELLIJ_OPEN_RECENT,  TD(TD_OPEN_TERMINAL),  _______,  _______,  _______,  _______,  _______,  _______,  _______,              _______,  _______,  _______,
-        _______,  _______,  _______, _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,    _______,
-        _______,  _______,  _______,  _______,  _______,  GIT_DIFF_BRANCH,  GIT_DIFF_REVISION,  _______,  _______,  _______,  _______,  _______,  _______,              _______,            _______,
-        _______,  _______,  _______,  _______,                                _______,                                _______,  _______,  _______,    _______,  _______,  _______,  _______),
+        _______,  LCMD(LALT(KC_TAB)),  _______,  INTELLIJ_CLOSE_PROJECT_WINDOW, _______,  INTELLIJ_OPEN_RECENT,  LALT(KC_F12),  _______,  _______,  _______,  _______,  _______,  _______,  _______, _______,  _______,  _______,
+        _______,  _______,  _______, _______,  _______,  LCMD(KC_1),  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,    _______,
+        _______,  _______,  _______,  _______,  _______,  _______,  GIT_DIFF_REVISION,  GIT_DIFF_BRANCH,  _______,  _______,  _______,  _______,  _______,              _______,                LCMD(LOPT(KC_TAB)),
+        _______,  _______,  _______,  _______,                                _______,                                _______,  _______,  _______,    _______,  LCMD(LCTL(LSFT(KC_LEFT))),  LCMD(LOPT(LSFT(KC_TAB))),  LCMD(LCTL(LSFT(KC_RIGHT)))),
 
     [WIN_BASE] = LAYOUT_93_iso(
         KC_MUTE,  KC_ESC,             KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    KC_F6,    KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,     KC_F12,   KC_PSCR,  KC_CTANA, RGB_MOD,
@@ -62,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 #if defined(ENCODER_MAP_ENABLE)
 const uint16_t PROGMEM encoder_map[][NUM_ENCODERS][2] = {
-    [MAC_BASE] = { ENCODER_CCW_CW(KC_VOLD, KC_VOLU)},
+    [MAC_BASE] = { ENCODER_CCW_CW(LCMD(KC_Y), LCMD(LSFT(KC_Y)))},  // undo/redo time wizardry
     [INTELLIJ]   = { ENCODER_CCW_CW(RGB_VAD, RGB_VAI)},
     [WIN_BASE] = { ENCODER_CCW_CW(KC_VOLD, KC_VOLU)},
     [WIN_FN]   = { ENCODER_CCW_CW(RGB_VAD, RGB_VAI)},

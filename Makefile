@@ -428,3 +428,11 @@ distclean: clean
 	echo -n 'Deleting *.bin, *.hex, and *.uf2 ... '
 	rm -f *.bin *.hex *.uf2
 	echo 'done.'
+
+.PHONY: compile flash
+
+compile:
+	@qmk compile -kb keychron/q3_pro/iso_encoder_se -km thought-tobi
+
+flash: compile
+	@qmk flash -kb keychron/q3_pro/iso_encoder_se -km thought-tobi

@@ -6,11 +6,8 @@ enum custom_keycodes {
     GIT_DIFF_REVISION,
     NONE, // cursed slot, registers cmd+tab
     DIFF_WITH_CLIPBOARD,
-    COPILOT_ACCEPT_LINE,
-    COPILOT_SUGGESTIONS_WINDOW,
-    NONE_2, // cursed slot, opens siri
-    COPILOT_PREV_SUGGESTION,
-    COPILOT_PREV_LINE
+    INTELLIJ_REVEAL_IN_FINDER,
+    // NONE_2, // cursed slot, opens siri
 };
 
 // macro definitions
@@ -41,24 +38,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             SEND_STRING(SS_LCTL(SS_LCMD(SS_LALT(SS_LSFT(SS_TAP(X_I))))) SS_TAP(X_C));
             break;
         }
-    case COPILOT_SUGGESTIONS_WINDOW:
+    case INTELLIJ_REVEAL_IN_FINDER:
         if (record -> event.pressed) {
-            SEND_STRING(SS_LCTL(SS_LCMD(SS_LALT(SS_LSFT(SS_TAP(X_C))))) SS_TAP(X_UP));
-            break;
-        }
-    case COPILOT_PREV_SUGGESTION:
-        if (record -> event.pressed) {
-            SEND_STRING(SS_LCTL(SS_LCMD(SS_LALT(SS_LSFT(SS_TAP(X_C))))) SS_TAP(X_DOWN));
-            break;
-        }
-    case COPILOT_ACCEPT_LINE:
-        if (record -> event.pressed) {
-            SEND_STRING(SS_LCTL(SS_LCMD(SS_LALT(SS_LSFT(SS_TAP(X_C))))) SS_TAP(X_LEFT));
-            break;
-        }
-    case COPILOT_PREV_LINE:
-        if (record -> event.pressed) {
-            SEND_STRING(SS_LCTL(SS_LCMD(SS_LALT(SS_LSFT(SS_TAP(X_C))))) SS_TAP(X_RIGHT));
+            SEND_STRING(SS_LCTL(SS_LCMD(SS_LALT(SS_LSFT(SS_TAP(X_I))))) SS_TAP(X_DOT));
             break;
         }
     case NONE:

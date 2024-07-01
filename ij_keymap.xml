@@ -1,0 +1,38 @@
+<keymap version="1" name="macOS copy" parent="Mac OS X 10.5+">
+  <action id="CloseProject">
+    <keyboard-shortcut first-keystroke="shift meta alt w" />
+  </action>
+  <action id="Compare.Selected">
+    <keyboard-shortcut first-keystroke="shift ctrl meta alt i" second-keystroke="v" />
+    <keyboard-shortcut first-keystroke="shift ctrl meta alt g" second-keystroke="v" />
+  </action>
+  <action id="CompareClipboardWithSelection">
+    <keyboard-shortcut first-keystroke="shift ctrl meta alt i" second-keystroke="c" />
+  </action>
+  <action id="DumpLookupElementWeights" />
+  <action id="Git.CompareWithBranch">
+    <keyboard-shortcut first-keystroke="shift ctrl meta alt g" second-keystroke="b" />
+  </action>
+  <action id="NextProjectWindow">
+    <keyboard-shortcut first-keystroke="meta alt back_quote" />
+    <keyboard-shortcut first-keystroke="meta alt tab" />
+  </action>
+  <action id="NextTab">
+    <keyboard-shortcut first-keystroke="ctrl right" />
+    <keyboard-shortcut first-keystroke="shift ctrl meta right" />
+  </action>
+  <action id="PreviousProjectWindow">
+    <keyboard-shortcut first-keystroke="shift meta alt back_quote" />
+    <keyboard-shortcut first-keystroke="shift meta alt tab" />
+  </action>
+  <action id="PreviousTab">
+    <keyboard-shortcut first-keystroke="ctrl left" />
+    <keyboard-shortcut first-keystroke="shift ctrl meta left" />
+  </action>
+  <action id="RecentProjectListGroup">
+    <keyboard-shortcut first-keystroke="shift ctrl meta alt i" second-keystroke="r" />
+  </action>
+  <action id="WelcomeScreen.RevealIn">
+    <keyboard-shortcut first-keystroke="shift ctrl meta alt i" second-keystroke="period" />
+  </action>
+</keymap>

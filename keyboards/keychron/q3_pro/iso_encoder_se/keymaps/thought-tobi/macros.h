@@ -6,8 +6,8 @@ enum custom_keycodes {
     GIT_DIFF_REVISION,
     NONE, // cursed slot, registers cmd+tab
     DIFF_WITH_CLIPBOARD,
-    INTELLIJ_REVEAL_IN_FINDER,
-    // NONE_2, // cursed slot, opens siri
+    NONE_2, // cursed slot, attempts to screenshot
+    INTELLIJ_PR_WINDOW,
 };
 
 // macro definitions
@@ -38,9 +38,9 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
             SEND_STRING(SS_LCTL(SS_LCMD(SS_LALT(SS_LSFT(SS_TAP(X_I))))) SS_TAP(X_C));
             break;
         }
-    case INTELLIJ_REVEAL_IN_FINDER:
+    case INTELLIJ_PR_WINDOW:
         if (record -> event.pressed) {
-            SEND_STRING(SS_LCTL(SS_LCMD(SS_LALT(SS_LSFT(SS_TAP(X_I))))) SS_TAP(X_DOT));
+            SEND_STRING(SS_LCTL(SS_LCMD(SS_LALT(SS_LSFT(SS_TAP(X_I))))) SS_TAP(X_P));
             break;
         }
     case NONE:

@@ -38,8 +38,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         RGB_TOG,  _______,            KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    LSFT(KC_F6),    KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,     KC_F12,   _______,  _______,  _______,
                   _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,    _______,  _______,  _______,  _______,
         _______,  LCMD(LALT(KC_TAB)),  _______,  INTELLIJ_CLOSE_PROJECT_WINDOW, _______,  INTELLIJ_OPEN_RECENT,  LALT(KC_F12),  _______,  _______,  _______,  _______,  INTELLIJ_PR_WINDOW,  _______,  _______, _______,  _______,  _______,
-        _______,  _______,  _______, _______,  DIFF_WITH_CLIPBOARD,  LCMD(KC_1),  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,    _______,
-            _______,  _______,  _______,  _______,  _______,  LCMD(LALT(LSFT(KC_7))),  GIT_DIFF_REVISION,  GIT_DIFF_BRANCH,  _______,  _______,  _______,  _______,  _______,              _______,                LCMD(LOPT(KC_TAB)),
+        _______,  _______,  _______, _______,  DIFF_WITH_CLIPBOARD,  LCMD(KC_1),  INTELLIJ_SHOW_CURRENT_FILE,  _______,  _______,  _______,  _______,  _______,  _______,  _______,    _______,
+            _______,  _______,  _______,  _______,  LCMD(KC_F8),  LCMD(LALT(LSFT(KC_7))),  GIT_DIFF_REVISION,  GIT_DIFF_BRANCH,  _______,  _______,  _______,  _______,  _______,              _______,                LCMD(LOPT(KC_TAB)),
         _______,  _______,  _______,  _______,                                _______,                                _______,  _______,  _______,    _______,  LCMD(LCTL(LSFT(KC_LEFT))),  LCMD(LOPT(LSFT(KC_TAB))),  LCMD(LCTL(LSFT(KC_RIGHT)))),
 
     [COPILOT] = LAYOUT_93_iso(

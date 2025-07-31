@@ -27,7 +27,7 @@ enum layers{
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [MAC_BASE] = LAYOUT_93_iso(
-        KC_MUTE,  KC_ESC,             KC_BRID,  KC_BRIU,  KC_MCTL,  KC_LPAD,  RGB_VAD,  RGB_VAI,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE,  KC_VOLD,    KC_VOLU,  KC_SNAP,  KC_SIRI,  RGB_MOD,
+        KC_MUTE,  KC_ESC,             KC_BRID,  KC_BRIU,  KC_MCTL,  KC_LPAD,  RGB_VAD,  RGB_VAI,  KC_MPRV,  KC_MPLY,  KC_MNXT,  KC_MUTE,  KC_VOLD,    KC_VOLU,  KC_SNAP,  KC_SIRI,  RGB_TOG,
                   KC_NUBS,   KC_1,     KC_2,     KC_3,     KC_4,     KC_5,     KC_6,     KC_7,     KC_8,     KC_9,     KC_0,     KC_MINS,  KC_EQL,     KC_BSPC,  KC_INS,   KC_HOME,  KC_PGUP,
         LCTL(LSFT(KC_C)),  KC_TAB,   KC_Q,     KC_W,     KC_E,     KC_R,     KC_T,     KC_Y,     KC_U,     KC_I,     KC_O,     KC_P,     KC_LBRC,  KC_RBRC,              KC_DEL,   KC_END,   KC_PGDN,
         _______,  MO(INTELLIJ),  KC_A,     KC_S,     KC_D,     KC_F,     KC_G,     KC_H,     KC_J,     KC_K,     KC_L,     KC_SCLN,  KC_QUOT,  KC_NUHS,    KC_ENT,
@@ -38,8 +38,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         RGB_TOG,  _______,            KC_F1,    KC_F2,    KC_F3,    KC_F4,    KC_F5,    LSFT(KC_F6),    KC_F7,    KC_F8,    KC_F9,    KC_F10,   KC_F11,     KC_F12,   _______,  _______,  _______,
                   _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,  _______,    _______,  _______,  _______,  _______,
         _______,  LCMD(LALT(KC_TAB)),  _______,  INTELLIJ_CLOSE_PROJECT_WINDOW, _______,  INTELLIJ_OPEN_RECENT,  LALT(KC_F12),  _______,  _______,  _______,  _______,  INTELLIJ_PR_WINDOW,  _______,  _______, _______,  _______,  _______,
-        _______,  _______,  _______, _______,  DIFF_WITH_CLIPBOARD,  LCMD(KC_1),  INTELLIJ_SHOW_CURRENT_FILE,  _______,  _______,  _______,  _______,  _______,  _______,  _______,    _______,
-            _______,  _______,  _______,  _______,  LCMD(KC_F8),  LCMD(LALT(LSFT(KC_7))),  GIT_DIFF_REVISION,  GIT_DIFF_BRANCH,  _______,  _______,  _______,  _______,  _______,              _______,                LCMD(LOPT(KC_TAB)),
+        _______,  _______, _______ , _______,  DIFF_WITH_CLIPBOARD,  LCMD(KC_1),  INTELLIJ_SHOW_CURRENT_FILE,  _______,  _______,  _______,  _______,  _______,  _______,  _______,    _______,
+            _______,  _______,  _______,  _______,  LCMD(KC_F8),  LCMD(LALT(LSFT(KC_7))),  GIT_DIFF_REVISION,  GIT_BLAME,  _______,  _______,  _______,  _______,  _______,              _______,                LCMD(LOPT(KC_TAB)),
         _______,  _______,  _______,  _______,                                _______,                                _______,  _______,  _______,    _______,  LCMD(LCTL(LSFT(KC_LEFT))),  LCMD(LOPT(LSFT(KC_TAB))),  LCMD(LCTL(LSFT(KC_RIGHT)))),
 
     [COPILOT] = LAYOUT_93_iso(

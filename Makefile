@@ -432,7 +432,7 @@ distclean: clean
 .PHONY: compile flash
 
 compile:
-	@qmk compile -kb keychron/q3_pro/iso_encoder_se -km thought-tobi
+	@qmk compile -kb keychron/q3_pro/iso_encoder_se -km tobi
 
 flash: compile
-	@qmk flash -kb keychron/q3_pro/iso_encoder_se -km thought-tobi
+	@qmk flash -kb keychron/q3_pro/iso_encoder_se -km tobi
